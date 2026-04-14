@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,22 +18,28 @@ export default function RootLayout({
         {/* Navbar */}
         <nav className="bg-tennis-green text-white shadow-md">
           <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="/" className="text-xl font-bold tracking-wide">
+            <Link href="/" className="text-xl font-bold tracking-wide">
               TennisDaily
-            </a>
+            </Link>
             <div className="flex gap-6 text-sm">
-              <a href="/" className="hover:text-tennis-ball transition">
+              <Link href="/" className="hover:text-tennis-ball transition">
                 首页
-              </a>
-              <a href="/news" className="hover:text-tennis-ball transition">
+              </Link>
+              <Link href="/news" className="hover:text-tennis-ball transition">
                 新闻
-              </a>
-              <a href="/matches" className="hover:text-tennis-ball transition">
+              </Link>
+              <Link
+                href="/matches"
+                className="hover:text-tennis-ball transition"
+              >
                 比赛
-              </a>
-              <a href="/rankings" className="hover:text-tennis-ball transition">
+              </Link>
+              <Link
+                href="/rankings"
+                className="hover:text-tennis-ball transition"
+              >
                 排名
-              </a>
+              </Link>
             </div>
           </div>
         </nav>

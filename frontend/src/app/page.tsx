@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { apiFetch } from "@/lib/api";
 
 interface Article {
@@ -76,12 +77,12 @@ export default async function Home() {
         <section className="bg-white rounded-lg shadow p-5">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-bold text-tennis-dark">最新新闻</h2>
-            <a
+            <Link
               href="/news"
               className="text-sm text-tennis-green hover:underline"
             >
               更多 &rarr;
-            </a>
+            </Link>
           </div>
           {news.length === 0 ? (
             <p className="text-gray-400 text-sm">暂无新闻</p>
@@ -89,12 +90,12 @@ export default async function Home() {
             <ul className="space-y-3">
               {news.map((a) => (
                 <li key={a.id} className="border-b pb-2 last:border-0">
-                  <a
+                  <Link
                     href={`/news/${a.id}`}
                     className="text-sm font-medium text-gray-800 hover:text-tennis-green transition"
                   >
                     {a.title}
-                  </a>
+                  </Link>
                   <div className="flex gap-3 mt-1 text-xs text-gray-400">
                     {a.category && (
                       <span className="bg-green-50 text-tennis-green px-2 py-0.5 rounded">
@@ -117,12 +118,12 @@ export default async function Home() {
         <section className="bg-white rounded-lg shadow p-5">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-bold text-tennis-dark">近期比赛</h2>
-            <a
+            <Link
               href="/matches"
               className="text-sm text-tennis-green hover:underline"
             >
               更多 &rarr;
-            </a>
+            </Link>
           </div>
           {matches.length === 0 ? (
             <p className="text-gray-400 text-sm">暂无比赛数据</p>
@@ -161,12 +162,12 @@ export default async function Home() {
         <section className="bg-white rounded-lg shadow p-5">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-bold text-tennis-dark">ATP 排名</h2>
-            <a
+            <Link
               href="/rankings"
               className="text-sm text-tennis-green hover:underline"
             >
               完整排名 &rarr;
-            </a>
+            </Link>
           </div>
           <table className="w-full text-sm">
             <thead>
@@ -196,12 +197,12 @@ export default async function Home() {
         <section className="bg-white rounded-lg shadow p-5">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-bold text-tennis-dark">WTA 排名</h2>
-            <a
-              href="/rankings?tour=WTA"
+            <Link
+              href="/rankings"
               className="text-sm text-tennis-green hover:underline"
             >
               完整排名 &rarr;
-            </a>
+            </Link>
           </div>
           <table className="w-full text-sm">
             <thead>
